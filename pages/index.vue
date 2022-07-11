@@ -6,7 +6,7 @@
 
     <div class="sub-title">
       <a :href="`http://bit.ly/2UZMeks`" class="">
-        {{ monthName }} {{ eventDate.getDate() }}, {{ eventDate.getFullYear() }}
+        {{ monthName }} {{ eventDate.day }}, {{ eventDate.year }}
         <font-awesome-icon icon="link" />
       </a>
 
@@ -118,14 +118,17 @@ export default {
         'November',
         'December',
       ]
-      return months[this.eventDate.getMonth()]
+
+      return months[+this.eventDate.month - 1]
     },
     eventDate() {
-      const date = new Date(this.nextEvent)
-      date.setHours(0, 0, 0, 0)
-      date.setDate(date.getDate() + 1)
+      const [year, month, day] = this.nextEvent.split("-")
 
-      return date
+      return {
+        year,
+        month, 
+        day
+      }
     },
   },
 }
