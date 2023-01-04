@@ -51,7 +51,7 @@ const allDates = (() => {
   const [year, month, day] = firstEvent.split('-');
   const currentDate = new Date(+year, +month - 1, +day);
 
-  for (let weekNumber = 1; weekNumber < 26; weekNumber++) {
+  for (let weekNumber = 0; weekNumber < 26; weekNumber++) {
     const nextDate = new Date(currentDate);
 
     nextDate.setHours(0, 0, 0, 0);
