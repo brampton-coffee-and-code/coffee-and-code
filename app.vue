@@ -38,7 +38,7 @@
 
 <script lang="ts" setup>
 const firstEvent = '2023-01-14';
-const weeksToSkip: string[] = [];
+const weeksToSkip: string[] = ['2023-04-08'];
 
 function pad(n: string, width: number, z: string = '0') {
   z = z || '0';
