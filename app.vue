@@ -39,8 +39,13 @@
 <script lang="ts" setup>
 const firstEvent = '2023-01-14';
 const weeksToSkip: string[] = [
-  '2022-04-08',
-  '2022-05-20',
+  '2023-04-08',
+  '2023-05-06',
+  '2023-05-20',
+];
+
+const extraWeeks: string[] = [
+  '2023-05-13',
 ];
 
 function pad(n: string, width: number, z: string = '0') {
@@ -71,7 +76,15 @@ const allDates = (() => {
     allDates.push(nextDate);
   }
 
-  return allDates;
+  extraWeeks.forEach(week => {
+    const [year, month, day] = week.split('-');
+    const currentDate = new Date(+year, +month - 1, +day);
+    currentDate.setHours(0, 0, 0, 0);
+
+    allDates.push(currentDate);
+  })
+
+  return allDates.sort((a, b) => a.getTime() - b.getTime());
 })();
 
 const nextEvent: Date = ((): Date => {
@@ -94,7 +107,6 @@ const nextEvent: Date = ((): Date => {
 })();
 
 const eventDate = (() => {
-  console.log(nextEvent);
   return {
     year: nextEvent.getFullYear(),
     month: nextEvent.getMonth(),
