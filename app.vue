@@ -29,6 +29,7 @@
             <a href="https://www.icepets.com" rel="noopener" target="_blank">IcePets.com</a>
             <a href="https://thegaminglist.com" rel="noopener" target="_blank">Gaming Forum</a>
             <a href="https://onlinegaming.directory" rel="noopener" target="_blank">Game Directory</a>
+            <a href="https://bbguides.com" rel="noopener" target="_blank">Game Guides</a>
           </div>
         </div>
       </div>
