@@ -9,7 +9,10 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^17.8.0"
   }
 }
