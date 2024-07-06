@@ -56,7 +56,7 @@ const nextEvent: Date = ((): Date => {
 
     return date >= today
   })
-
+debugger
   if (!dates.length) {
     return eventDates[eventDates.length - 1]
   }
