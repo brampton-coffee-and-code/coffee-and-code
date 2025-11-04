@@ -1,5 +1,6 @@
 const firstEvent = '2025-01-11';
 const weeksToSkip: string[] = [
+  '2025-12-27'
 ];
 
 const extraWeeks: string[] = [
