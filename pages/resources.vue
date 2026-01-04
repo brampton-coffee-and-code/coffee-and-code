@@ -63,6 +63,12 @@
   </div>
 </template>
 
+<script lang="ts" setup>
+useHead({
+  title: 'Resources - Coffee \'n\' Code'
+});
+</script>
+
 <style scoped>
 .page-container {
   max-width: 1200px;
@@ -107,6 +113,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .resource-card::before {
@@ -152,15 +159,20 @@
 }
 
 .resource-tag {
-  display: inline-block;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  display: block;
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
   padding: 6px 15px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  opacity: 0.8;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .community-card p {

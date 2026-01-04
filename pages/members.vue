@@ -1,3 +1,31 @@
+<script lang="ts" setup>
+const memberDetails = {
+  name: "Andrew Judd",
+  role: "Community Organizer & Full Stack Developer",
+  description: "Passionate about building communities and helping developers grow. Always ready to help with coding challenges!",
+  website: "https://judd.dev",
+  skills: [
+    "15+ Years Experience",
+    "Mentoring",
+    "Data Analytics",
+    "C#",
+    "PHP",
+    "Python",
+    "TDD",
+    "Automated Testing",
+    "JavaScript/TypeScript",
+    "Vue.js",
+    "Saas",
+    "Server/Infrastructure",
+    "Homelabs"
+  ]
+};
+
+useHead({
+  title: 'Members - Coffee \'n\' Code'
+});
+</script>
+
 <template>
   <div class="cnc">
     <div class="cnc-background" />
@@ -12,30 +40,15 @@
         <div class="organizer-card">
           <div class="card-overlay">
             <div class="skills-grid">
-              <span class="skill-tag">15+ Years Experience</span>
-              <span class="skill-tag">Mentoring</span>
-              <span class="skill-tag">Data Analytics</span>
-              <span class="skill-tag">JavaScript/TypeScript</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">Ionic Framework</span>
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">PHP</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">TDD</span>
-              <span class="skill-tag">Automated Testing</span>
-              <span class="skill-tag">Data Analytics</span>
-              <span class="skill-tag">Saas</span>
-              <span class="skill-tag">Saas</span>
-              <span class="skill-tag">Server/Infrastructure</span>
-              <span class="skill-tag">Homelabs</span>
+              <span v-for="skill in memberDetails.skills" :key="skill" class="skill-tag">{{ skill }}</span>
             </div>
-            <a href="https://judd.dev" target="_blank" class="profile-link">Visit Portfolio</a>
+            <a :href="memberDetails.website" target="_blank" class="profile-link">Visit Portfolio</a>
           </div>
           <div class="organizer-avatar">👨‍💻</div>
-          <h3>Andrew Judd</h3>
-          <p class="role">Community Organizer & Full Stack Developer</p>
+          <h3>{{ memberDetails.name }}</h3>
+          <p class="role">{{ memberDetails.role }}</p>
           <div class="profile-content">
-            <p class="default-text">Passionate about building communities and helping developers grow. Always ready to help with coding challenges!</p>
+            <p class="default-text">{{ memberDetails.description }}</p>
           </div>
         </div>
       </div>
@@ -132,7 +145,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -162,7 +175,7 @@
 }
 
 .role {
-  color: #667eea;
+  color: #22c55e;
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 20px;
@@ -176,7 +189,7 @@
 
 .profile-link {
   display: inline-block;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   color: white;
   padding: 12px 25px;
   border-radius: 25px;
@@ -253,19 +266,29 @@
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
   padding: 6px 12px;
   border-radius: 15px;
   font-size: 12px;
   font-weight: 500;
+  opacity: 0.8;
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   margin-bottom: 60px;
+}
+
+.member-type-card:nth-child(5) {
+  grid-column: 2;
+}
+
+.member-type-card:nth-child(6) {
+  grid-column: 3;
 }
 
 .member-type-card {
@@ -308,7 +331,7 @@
 }
 
 .join-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 50px 40px;
@@ -352,9 +375,18 @@
 }
 
 @media screen and (max-width: 768px) {
+  .page-container {
+    padding: 100px 20px 40px 20px;
+  }
+
   .members-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+  }
+  
+  .member-type-card:nth-child(5),
+  .member-type-card:nth-child(6) {
+    grid-column: auto;
   }
 
   .organizer-card, .join-card {

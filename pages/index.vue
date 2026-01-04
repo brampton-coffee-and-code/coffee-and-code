@@ -41,6 +41,10 @@
 
 <script lang="ts" setup>
 const { eventDate, monthName } = useNextEvent();
+
+useHead({
+  title: 'Coffee \'n\' Code - Brampton Developer Meetup'
+});
 </script>
 
 

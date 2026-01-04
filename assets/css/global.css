@@ -1,10 +1,11 @@
 html,
 body {
-  background-image: url('~/assets/coffee-n-code.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('~/assets/coffee-n-code.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 100vh;
   background-color: #fff;
   color: #636b6f;
   font-family: "Figtree", "Poppins", "Roboto", sans-serif;
@@ -23,7 +24,7 @@ body {
 }
 
 .cnc-background {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.7);
   height: 100%;
   min-height: 100vh;
   position: fixed;
@@ -56,5 +57,9 @@ body {
 
   .sub-title {
     font-size: 24px;
+  }
+  
+  .page-container {
+    padding: 100px 20px 40px 20px !important;
   }
 }

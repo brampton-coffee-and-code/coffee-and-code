@@ -7,7 +7,7 @@
         <div class="title m-b-md">Join Our Community</div>
         <div class="sub-title">Ready to connect with amazing developers? Here's how to get started!</div>
       </div>
-      
+
       <div class="steps-section">
         <div class="step-card">
           <div class="step-number">1</div>
@@ -19,7 +19,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="step-card">
           <div class="step-number">2</div>
           <div class="step-content">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="step-card">
           <div class="step-number">3</div>
           <div class="step-content">
@@ -41,12 +41,13 @@
             <div class="bring-list">
               <span>💻 Your laptop</span>
               <span>🤔 Questions or ideas</span>
+              <span>🛠️ A project</span>
               <span>☕ Enthusiasm (we provide the coffee!)</span>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="contact-section">
         <div class="contact-card">
           <h3>📧 Get In Touch</h3>
@@ -56,7 +57,7 @@
           </a>
         </div>
       </div>
-      
+
       <div class="faq-section">
         <h3 class="section-title">❓ Frequently Asked Questions</h3>
         <div class="faq-grid">
@@ -64,12 +65,12 @@
             <h4>Do I need to be an experienced developer?</h4>
             <p>Not at all! We welcome developers of all skill levels, from complete beginners to seasoned experts. Everyone has something to learn and teach.</p>
           </div>
-          
+
           <div class="faq-card">
             <h4>What should I bring to sessions?</h4>
-            <p>Just bring your laptop and enthusiasm to learn. We'll provide a welcoming community, great conversations, and virtual coffee!</p>
+            <p>Just bring your laptop and enthusiasm to learn. We'll provide a welcoming community, great conversations, and coffee!</p>
           </div>
-          
+
           <div class="faq-card">
             <h4>Is there a cost to attend?</h4>
             <p>Absolutely free! Coffee 'n' Code is a community-driven meetup with no fees or hidden costs. Just show up and enjoy!</p>
@@ -79,6 +80,12 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+useHead({
+  title: 'Contact - Coffee \'n\' Code'
+});
+</script>
 
 <style scoped>
 .page-container {
@@ -117,7 +124,7 @@
 }
 
 .step-number {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   color: white;
   width: 60px;
   height: 60px;
@@ -128,11 +135,12 @@
   font-weight: bold;
   font-size: 24px;
   flex-shrink: 0;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
 }
 
 .step-content {
   flex: 1;
+  text-align: center;
 }
 
 .step-content h3 {
@@ -151,7 +159,7 @@
 
 .discord-button {
   display: inline-block;
-  background: #5865F2;
+  background: #22c55e;
   color: white;
   padding: 15px 30px;
   border-radius: 25px;
@@ -159,13 +167,13 @@
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
 }
 
 .discord-button:hover {
-  background: #4752C4;
+  background: #16a34a;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4);
   color: white;
 }
 
@@ -174,16 +182,17 @@
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 15px;
+  justify-content: center;
 }
 
 .session-info span, .bring-list span {
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(34, 197, 94, 0.1);
   color: #333;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 .contact-section {
@@ -193,7 +202,7 @@
 }
 
 .contact-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 40px;
@@ -288,15 +297,15 @@
     gap: 20px;
     padding: 30px 25px;
   }
-  
+
   .session-info, .bring-list {
     justify-content: center;
   }
-  
+
   .faq-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-card {
     padding: 30px 25px;
   }

@@ -37,14 +37,17 @@
 
 @media screen and (max-width: 768px) {
   .nav {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.95);
     padding: 10px;
-    border-radius: 10px;
-    margin: 20px;
-    z-index: 10;
+    margin: 0;
+    border-radius: 0;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
   .nav-link {
