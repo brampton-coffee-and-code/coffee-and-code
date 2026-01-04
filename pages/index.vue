@@ -1,6 +1,7 @@
 <template>
   <div class="cnc">
     <div class="cnc-background" />
+    <Navigation />
     <div class="flex-center position-ref full-height">
       <div class="content">
         <div>
@@ -27,12 +28,10 @@
 
           <div class="links">
             <a href="https://bit.ly/2UZMeks" rel="noopener">Join our Discord Server</a>
-            <a href="https://www.andrewjudd.ca" rel="noopener" target="_blank">Andrew Judd</a>
-            <a href="https://checkiton.us" rel="noopener" target="_blank">Server Monitoring</a>
+            <a href="https://judd.dev" rel="noopener" target="_blank">Andrew Judd</a>
             <a href="https://www.icepets.com" rel="noopener" target="_blank">IcePets.com</a>
             <a href="https://thegaminglist.com" rel="noopener" target="_blank">Gaming Forum</a>
             <a href="https://onlinegaming.directory" rel="noopener" target="_blank">Game Directory</a>
-            <a href="https://bbguides.com" rel="noopener" target="_blank">Game Guides</a>
           </div>
         </div>
       </div>
@@ -41,55 +40,7 @@
 </template>
 
 <script lang="ts" setup>
-import allDates from  '../src/helpers/allDates';
-
-const nextEvent: Date = ((): Date => {
-  const eventDates = [
-    ...allDates
-  ];
-  const today = new Date(new Date().toJSON().slice(0, 10))
-  today.setHours(0, 0, 0, 0)
-
-  const dates = eventDates.filter((d) => {
-    const date = new Date(d)
-    date.setHours(0, 0, 0, 0)
-
-    return date >= today
-  })
-debugger
-  if (!dates.length) {
-    return eventDates[eventDates.length - 1]
-  }
-
-  return dates[0];
-})();
-
-const eventDate = (() => {
-  return {
-    year: nextEvent.getFullYear(),
-    month: nextEvent.getMonth(),
-    day: nextEvent.getDate(),
-  }
-})();
-
-const monthName = (() => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-
-  return months[+eventDate.month]
-})();
+const { eventDate, monthName } = useNextEvent();
 </script>
 
 
@@ -99,8 +50,8 @@ body,
 .cnc {
   background-color: #fff;
   color: #636b6f;
-  font-family: "Nunito", sans-serif;
-  font-weight: 100;
+  font-family: "Figtree", "Poppins", "Roboto", sans-serif;
+  font-weight: 400;
   height: 100vh;
   margin: 0;
 }
@@ -110,13 +61,17 @@ body,
 }
 
 .cnc-background {
-  background-image: url("~/assets/coffee-n-code.jpg");
+  background-image: url('~/assets/coffee-n-code.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   opacity: 0.3;
-  height: 100%;
+  height: 100vh;
   position: absolute;
-  width: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .flex-center {
@@ -137,6 +92,8 @@ body,
 
 .content {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -180,19 +137,27 @@ a {
   }
 
   .title {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .sub-title {
-    font-size: 30px;
+    font-size: 24px;
   }
 
-  .sub-sub-title {
-    font-size: 20px;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
   }
 
   .links>a {
     font-size: 10px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    margin: 2px;
   }
 }
 

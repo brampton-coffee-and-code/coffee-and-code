@@ -1,0 +1,60 @@
+html,
+body {
+  background-image: url('~/assets/coffee-n-code.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Figtree", "Poppins", "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cnc {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Figtree", "Poppins", "Roboto", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+.cnc-background {
+  background: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  min-height: 100vh;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.title {
+  font-size: 64px;
+  font-family: "Michroma", "Orbitron", monospace;
+  font-weight: 400;
+}
+
+.sub-title {
+  font-size: 42px;
+  font-family: "Michroma", "Orbitron", monospace;
+  font-weight: 400;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .sub-title {
+    font-size: 24px;
+  }
+}
