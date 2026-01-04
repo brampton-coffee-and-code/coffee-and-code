@@ -83,7 +83,11 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Contact - Coffee \'n\' Code'
+  title: 'Contact - Coffee \'n\' Code',
+  meta: [
+    { name: 'description', content: 'Join Coffee \'n\' Code developer meetup in Brampton. Get started by joining our Discord server and attending sessions at Springdale Library every other Saturday.' },
+    { name: 'keywords', content: 'join developer meetup, contact coffee n code, Brampton programming community, Springdale Library, Discord developer community' }
+  ]
 });
 </script>
 
