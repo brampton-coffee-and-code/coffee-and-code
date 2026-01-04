@@ -22,7 +22,11 @@ const memberDetails = {
 };
 
 useHead({
-  title: 'Members - Coffee \'n\' Code'
+  title: 'Members - Coffee \'n\' Code',
+  meta: [
+    { name: 'description', content: 'Meet the Coffee \'n\' Code community members including full stack developers, frontend specialists, backend engineers, mobile developers, and students learning to code.' },
+    { name: 'keywords', content: 'developer community members, full stack developers, frontend developers, backend engineers, mobile developers, programming students' }
+  ]
 });
 </script>
 

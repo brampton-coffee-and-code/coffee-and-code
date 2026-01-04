@@ -43,7 +43,11 @@
 const { eventDate, monthName } = useNextEvent();
 
 useHead({
-  title: 'About - Coffee \'n\' Code'
+  title: 'About - Coffee \'n\' Code',
+  meta: [
+    { name: 'description', content: 'Learn about Coffee \'n\' Code, a welcoming developer community in Brampton where programmers of all skill levels come together to learn, share knowledge, and collaborate on projects.' },
+    { name: 'keywords', content: 'about coffee n code, developer community, programming meetup, Brampton tech, coding collaboration' }
+  ]
 });
 </script>
 
