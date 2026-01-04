@@ -36,7 +36,7 @@ body,
 }
 
 .cnc-background {
-  background-image: url("~assets/coffee-n-code.jpg");
+  background-image: url("~/assets/coffee-n-code.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.3;
