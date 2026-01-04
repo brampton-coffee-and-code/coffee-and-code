@@ -41,6 +41,10 @@
 
 <script lang="ts" setup>
 const { eventDate, monthName } = useNextEvent();
+
+useHead({
+  title: 'About - Coffee \'n\' Code'
+});
 </script>
 
 <style scoped>
@@ -155,7 +159,7 @@ const { eventDate, monthName } = useNextEvent();
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   color: white;
   padding: 15px 30px;
   border-radius: 50px;
