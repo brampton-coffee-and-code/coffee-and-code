@@ -14,23 +14,24 @@ function pad(n: string, width: number, z: string = '0') {
 const allDates = (() => {
   const allDates = [];
   const [year, month, day] = firstEvent.split('-');
-  const currentDate = new Date(+year, +month - 1, +day);
+  const startDate = new Date(+year, +month - 1, +day);
+  const today = new Date();
+  const estOffset = -5 * 60; // EST is UTC-5
+  const estTime = new Date(today.getTime() + (today.getTimezoneOffset() + estOffset) * 60000);
+  const endDate = new Date(estTime.getFullYear() + 2, estTime.getMonth(), estTime.getDate());
 
-  for (let weekNumber = 0; weekNumber < 26; weekNumber++) {
-    const nextDate = new Date(currentDate);
+  let currentDate = new Date(startDate);
+  
+  while (currentDate <= endDate) {
+    const nextDateString = `${currentDate.getFullYear()}-`
+      + `${pad((currentDate.getMonth() + 1).toString(), 2)}-`
+      + `${pad(currentDate.getDate().toString(), 2)}`;
 
-    nextDate.setHours(0, 0, 0, 0);
-    nextDate.setDate(nextDate.getDate() + (2 * 7 * weekNumber));
-
-    const nextDateString = `${nextDate.getFullYear()}-`
-      + `${pad((nextDate.getMonth() + 1).toString(), 2)}-`
-      + `${pad(nextDate.getDate().toString(), 2)}`;
-
-    if (weeksToSkip.includes(nextDateString)) {
-      continue;
+    if (!weeksToSkip.includes(nextDateString)) {
+      allDates.push(new Date(currentDate));
     }
-
-    allDates.push(nextDate);
+    
+    currentDate.setDate(currentDate.getDate() + 14);
   }
 
   extraWeeks.forEach(week => {

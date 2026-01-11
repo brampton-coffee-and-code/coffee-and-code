@@ -43,7 +43,17 @@
 const { eventDate, monthName } = useNextEvent();
 
 useHead({
-  title: 'Coffee \'n\' Code - Brampton Developer Meetup'
+  title: 'Coffee \'n\' Code - Brampton Developer Meetup',
+  meta: [
+    { name: 'description', content: 'Join Coffee \'n\' Code, a bi-weekly developer meetup in Brampton. Connect with local developers, learn new technologies, and grow your coding skills every other Saturday at Springdale Library.' },
+    { name: 'keywords', content: 'developer meetup, coding community, Brampton developers, programming, JavaScript, Vue.js, C#, PHP, Python, tech meetup' },
+    { property: 'og:title', content: 'Coffee \'n\' Code - Brampton Developer Meetup' },
+    { property: 'og:description', content: 'Join our bi-weekly developer meetup in Brampton. Learn, share, and grow with fellow developers every other Saturday.' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: 'Coffee \'n\' Code - Brampton Developer Meetup' },
+    { name: 'twitter:description', content: 'Join our bi-weekly developer meetup in Brampton. Learn, share, and grow with fellow developers.' }
+  ]
 });
 </script>
 

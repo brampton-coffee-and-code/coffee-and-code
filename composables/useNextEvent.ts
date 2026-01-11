@@ -3,8 +3,10 @@ import allDates from '../src/helpers/allDates';
 export const useNextEvent = () => {
   const nextEvent: Date = ((): Date => {
     const eventDates = [...allDates];
-    const today = new Date(new Date().toJSON().slice(0, 10));
-    today.setHours(0, 0, 0, 0);
+    const now = new Date();
+    const estOffset = -5 * 60; // EST is UTC-5
+    const estTime = new Date(now.getTime() + (now.getTimezoneOffset() + estOffset) * 60000);
+    const today = new Date(estTime.getFullYear(), estTime.getMonth(), estTime.getDate());
 
     const dates = eventDates.filter((d) => {
       const date = new Date(d);

@@ -65,7 +65,11 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Resources - Coffee \'n\' Code'
+  title: 'Resources - Coffee \'n\' Code',
+  meta: [
+    { name: 'description', content: 'Discover curated developer resources including learning platforms like MDN Web Docs, freeCodeCamp, development tools like VS Code, GitHub, and more programming resources.' },
+    { name: 'keywords', content: 'developer resources, programming tools, MDN Web Docs, freeCodeCamp, VS Code, GitHub, Postman, coding tutorials' }
+  ]
 });
 </script>
 
