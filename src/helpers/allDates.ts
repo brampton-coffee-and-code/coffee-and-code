@@ -1,4 +1,4 @@
-const firstEvent = '2025-01-08';
+const firstEvent = '2026-01-10';
 const weeksToSkip: string[] = [
 ];
 
