@@ -1,25 +1,46 @@
 <script lang="ts" setup>
-const memberDetails = {
-  name: "Andrew Judd",
-  role: "Community Organizer & Full Stack Developer",
-  description: "Passionate about building communities and helping developers grow. Always ready to help with coding challenges!",
-  website: "https://judd.dev",
-  skills: [
-    "15+ Years Experience",
-    "Mentoring",
-    "Data Analytics",
-    "C#",
-    "PHP",
-    "Python",
-    "TDD",
-    "Automated Testing",
-    "JavaScript/TypeScript",
-    "Vue.js",
-    "Saas",
-    "Server/Infrastructure",
-    "Homelabs"
-  ]
-};
+const members = [
+  {
+    name: "Andrew Judd",
+    role: "Community Organizer & Full Stack Developer",
+    description: "Passionate about building communities and helping developers grow. Always ready to help with coding challenges!",
+    emoji: "👨‍💻",
+    website: "https://judd.dev",
+    skills: [
+      "15+ Years Experience",
+      "Mentoring",
+      "Data Analytics",
+      "C#",
+      "PHP",
+      "Python",
+      "TDD",
+      "Automated Testing",
+      "JavaScript/TypeScript",
+      "Vue.js",
+      "Saas",
+      "Server/Infrastructure",
+      "Homelabs"
+    ]
+  },
+  {
+    name: "David Symonds",
+    emoji: "🧙‍♂️",
+    role: "Community Veteran & Full Stack Dev",
+    description: "Committed to sharing knowledge and discussing modern software practices and emerging technologies. Eager to support fellow developers as they grow their skills and ideas.",
+    skills: [
+      "15+ Years",
+      "C#",
+      ".NET",
+      "Data Analysis",
+      "SaaS",
+      "CI/CD",
+      "Agile",
+      "Angular/TypeScript",
+      "SQL Server",
+      "Data Pipelines"
+    ]
+  }
+];
 
 useHead({
   title: 'Members - Coffee \'n\' Code',
@@ -41,18 +62,18 @@ useHead({
       </div>
 
       <div class="organizer-section">
-        <div class="organizer-card">
+        <div v-for="member in members" :key="member.name" class="organizer-card">
           <div class="card-overlay">
             <div class="skills-grid">
-              <span v-for="skill in memberDetails.skills" :key="skill" class="skill-tag">{{ skill }}</span>
+              <span v-for="skill in member.skills" :key="skill" class="skill-tag">{{ skill }}</span>
             </div>
-            <a :href="memberDetails.website" target="_blank" class="profile-link">Visit Portfolio</a>
+            <a v-if="member.website" :href="member.website" target="_blank" class="profile-link">Visit Portfolio</a>
           </div>
-          <div class="organizer-avatar">👨‍💻</div>
-          <h3>{{ memberDetails.name }}</h3>
-          <p class="role">{{ memberDetails.role }}</p>
+          <div class="organizer-avatar">{{ member.emoji }}</div>
+          <h3>{{ member.name }}</h3>
+          <p class="role">{{ member.role }}</p>
           <div class="profile-content">
-            <p class="default-text">{{ memberDetails.description }}</p>
+            <p class="default-text">{{ member.description }}</p>
           </div>
         </div>
       </div>
@@ -123,6 +144,8 @@ useHead({
 .organizer-section {
   display: flex;
   justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
   margin-bottom: 60px;
 }
 
